@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/all_sort"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:clickable="true"
+        android:padding="8dp"
+        android:text="综合排序"
+        android:textSize="18sp" />
+
+
+    <TextView
+        android:id="@+id/new_sort"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:clickable="true"
+        android:padding="8dp"
+        android:text="新品排序"
+        android:textSize="18sp" />
+
+
+    <TextView
+        android:id="@+id/comment_sort"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:clickable="true"
+        android:padding="8dp"
+        android:text="评级从高至低"
+        android:textSize="18sp" />
+    
+    <View
+        android:id="@+id/left_v"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/transparent"  />
+
+</LinearLayout>

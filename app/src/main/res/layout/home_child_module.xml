@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center" >
+            <ImageView 
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/home_category" />
+            <TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="分类查询"
+                android:textSize="14sp"  />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center" >
+            <ImageView 
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/home_logistics" />
+            <TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="物流查询"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center" >
+            <ImageView 
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/home_shopcar" />
+            <TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="购物车"
+                android:textSize="14sp"  />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center" >
+            <ImageView 
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/home_jd" />
+            <TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="我的京东"
+                android:textSize="14sp"  />
+
+        </LinearLayout>
+    </LinearLayout>
+	<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center" >
+            <ImageView 
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/home_recharge" />
+            <TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="充值中心"
+                android:textSize="14sp"  />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center" >
+            <ImageView 
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/home_ticket" />
+            <TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="领劵中心"
+                android:textSize="14sp"  />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center" >
+            <ImageView 
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/home_jdmarket" />
+            <TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="京东超市"
+                android:textSize="14sp"  />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <ImageView 
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/home_follow" />
+            <TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="我的关注"
+                android:textSize="14sp"  />
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

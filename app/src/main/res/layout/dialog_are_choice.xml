@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="选择收货地址"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:background="@color/bot_text_color_normal"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+        <ListView
+            android:id="@+id/province_lv"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
+        <ListView
+            android:id="@+id/city_lv"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
+        <ListView
+            android:id="@+id/are_lv"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/bt_cancle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="取消"
+            android:textColor="@color/white"
+            android:background="@color/bot_text_color_normal"/>
+
+        <Button
+            android:id="@+id/bt_sure"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="确定"
+            android:textColor="@color/white"
+            android:background="@color/bot_text_color_normal"
+            android:layout_marginLeft="2dp"/>
+    </LinearLayout>
+
+</LinearLayout>

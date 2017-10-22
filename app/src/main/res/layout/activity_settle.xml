@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+
+    <!-- 头部 -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="4dp"
+            android:onClick="goBack"
+            android:src="@drawable/goback" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="填写订单"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="8dp"
+        android:background="#F888" />
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        app:cardCornerRadius="5dp">
+
+        <RelativeLayout
+            android:id="@+id/has_receiver_rl"
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
+
+
+            <TextView
+                android:id="@+id/name_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/phone_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/name_tv"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@id/name_tv"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/address_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/name_tv"
+                android:layout_below="@id/name_tv"
+                android:layout_marginTop="5dp"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/choose_address_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="2dp"
+                android:background="@drawable/search_et_shap"
+                android:clickable="true"
+                android:onClick="chooseAddress"
+                android:padding="5dp"
+                android:text=" 选 择 地 址" />
+
+            <TextView
+                android:id="@+id/tv_add_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/choose_address_tv"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="2dp"
+                android:background="@drawable/search_et_shap"
+                android:clickable="true"
+                android:onClick="addAddress"
+                android:padding="5dp"
+                android:text="添加新地址" />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        app:cardCornerRadius="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/settle_choose_rv"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/total_psize_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="10dp"
+                android:drawableRight="@drawable/more"
+                android:gravity="center_vertical" />
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        app:cardCornerRadius="5dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/all_price_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:text="商品金额" />
+
+            <TextView
+                android:id="@+id/all_price_val_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@id/all_price_tv"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="-5dp"
+                android:textColor="#F23030"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        app:cardCornerRadius="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="支付方式:" />
+
+            <Button
+                android:id="@+id/pay_online_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:background="@drawable/pay_money_choose_bg"
+                android:padding="8dp"
+                android:text="在线支付"
+                android:textColor="@drawable/choose_productlist_service_txtbg" />
+
+            <Button
+                android:id="@+id/pay_whenget_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/pay_money_choose_bg"
+                android:padding="8dp"
+                android:text="货到付款"
+                android:textColor="@drawable/choose_productlist_service_txtbg" />
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#F888" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#F00"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/pay_money_tv"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:background="#F000"
+            android:gravity="center_vertical"
+            android:paddingLeft="8dp"
+            android:textColor="#FFFF"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/bt_submitClick"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#F15353"
+            android:gravity="center"
+            android:text="提交订单"
+            android:textColor="#FFFF"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</LinearLayout>

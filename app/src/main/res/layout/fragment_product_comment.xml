@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/white" >
+	 <View 
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="#767676" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:id="@+id/all_comment_ll"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/all_comment_tip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="全部评价"
+                android:textColor="@drawable/comment_title_txtcolor"
+                android:textStyle="bold"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/all_comment_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@drawable/comment_title_txtcolor"
+                android:textStyle="bold"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/positive_comment_ll"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/positive_comment_tip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="好评"
+                android:textColor="@drawable/comment_title_txtcolor"
+                android:textStyle="bold"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/positive_comment_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@drawable/comment_title_txtcolor"
+                android:textStyle="bold"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/center_comment_ll"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/center_comment_tip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="中评"
+                android:textColor="@drawable/comment_title_txtcolor"
+                android:textStyle="bold"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/center_comment_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@drawable/comment_title_txtcolor"
+                android:textStyle="bold"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/nagetive_comment_ll"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/nagetive_comment_tip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="差评"
+                android:textColor="@drawable/comment_title_txtcolor"
+                android:textStyle="bold"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/nagetive_comment_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@drawable/comment_title_txtcolor"
+                android:textStyle="bold"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/has_image_comment_ll"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/has_image_comment_tip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="有图"
+                android:textColor="@drawable/comment_title_txtcolor"
+                android:textStyle="bold"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/has_image_comment_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@drawable/comment_title_txtcolor"
+                android:textStyle="bold"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <View 
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#767676" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/comment_lv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:cacheColorHint="#0000"
+        android:listSelector="#0000"
+        android:scrollbars="none" />
+
+</LinearLayout>

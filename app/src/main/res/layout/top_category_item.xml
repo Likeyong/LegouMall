@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item_ll"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="1dp"
+        android:layout_height="60dp"
+        android:layout_alignParentRight="true"
+        android:background="#C2C2C2" />
+
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_toLeftOf="@id/divider"
+        android:textColor="@drawable/top_category_item_bg"
+        android:gravity="center" />
+
+</RelativeLayout>
+

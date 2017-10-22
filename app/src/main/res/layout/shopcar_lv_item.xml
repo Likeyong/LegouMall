@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    app:cardCornerRadius="4dp"
+    android:id="@+id/ll">
+
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:descendantFocusability="blocksDescendants"
+        android:orientation="horizontal">
+        <!-- android:descendantFocusability="blocksDescendants" 点击item的时候 虽然子控件获取了焦点 但是item也获取焦点 -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:background="@android:color/white"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/cbx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="6dp"
+                android:button="@drawable/shopcar_item_cbx_bg"
+                android:clickable="false" />
+
+            <ImageView
+                android:id="@+id/product_iv"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="8dp"
+                android:layout_toRightOf="@id/cbx"
+                android:background="@drawable/search_et_shap"
+                android:padding="1dp" />
+
+            <TextView
+                android:id="@+id/pname_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/product_iv"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="8dp"
+                android:layout_toRightOf="@id/product_iv"
+                android:ellipsize="end"
+                android:lines="2"
+                android:textColor="@android:color/black"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/pversion_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/pname_tv"
+                android:layout_below="@id/pname_tv"
+                android:layout_marginTop="5dp"
+                android:ellipsize="end"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/price_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/product_iv"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/product_iv"
+                android:textColor="#F00"
+                android:textSize="11sp" />
+
+            <TextView
+                android:id="@+id/buyCount_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/price_tv"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/price_tv"
+                android:textSize="11sp" />
+
+            <Button
+                android:id="@+id/delete_product"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="50dp"
+
+                android:layout_marginRight="10dp"
+                android:background="@drawable/search_et_shap"
+                android:paddingBottom="8dp"
+                android:paddingLeft="8dp"
+                android:paddingRight="4dp"
+                android:paddingTop="4dp"
+                android:text="删除"
+                android:textSize="12sp" />
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+</android.support.v7.widget.CardView>

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="15dp" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <!-- 用户 -->
+
+            <ImageView
+                android:id="@+id/icon_iv"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="10dp"  />
+
+            <TextView
+                android:id="@+id/name_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"  />
+
+            <TextView
+                android:id="@+id/time_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:gravity="right"
+                android:textColor="#C6C6C6"  />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#8888" />
+
+        <include
+            android:id="@+id/rating_bar"
+            layout="@layout/rating_bar_view" />
+
+        <TextView
+            android:id="@+id/content_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:ellipsize="end"
+            android:maxLines="2" />
+        
+        <LinearLayout
+            android:id="@+id/iamges_container"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="20dp"
+            android:orientation="horizontal"
+            android:visibility="gone" >
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"  />
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_marginLeft="5dp"
+                android:layout_height="match_parent" />
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_marginLeft="5dp"
+                android:layout_height="match_parent" />
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_marginLeft="5dp"
+                android:layout_height="match_parent" />
+		</LinearLayout>
+        <TextView
+            android:id="@+id/buytime_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="10dp"
+            android:textSize="12sp"
+            android:textColor="#C6C6C6" />
+
+        <TextView
+            android:id="@+id/buyversion_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="2dp"
+            android:textSize="12sp"
+            android:textColor="#C6C6C6" />
+
+        <View
+            android:layout_marginTop="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#F222" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/lovecount_tv"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+            	android:textSize="12sp"
+                android:gravity="center"
+                android:textColor="#F000"  />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="#F222" />
+
+            <TextView
+                android:id="@+id/subcomment_tv"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+            	android:textSize="12sp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textColor="#F000"  />
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#F222" />
+
+    </LinearLayout>
+
+</RelativeLayout>

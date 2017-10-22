@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.maxcion_home.jdmall.ui.BottomBar
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="55dp"
+    android:orientation="horizontal"  >
+
+    <LinearLayout
+        android:id="@+id/frag_main_ll" 
+        style="@style/bottom_ll_style" >
+
+        <ImageView
+            android:id="@+id/frag_main_iv"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/home_bot_bar" />
+
+        <TextView
+            android:id="@+id/frag_main"
+            style="@style/bottom_text_style"
+            android:text="@string/frag_main" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/frag_category_ll" 
+        style="@style/bottom_ll_style" >
+
+        <ImageView
+            android:id="@+id/frag_category_iv"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/category_bot_bar" />
+
+        <TextView
+            android:id="@+id/frag_category"
+            style="@style/bottom_text_style"
+            android:text="@string/frag_category" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/frag_shopcar_ll" 
+        style="@style/bottom_ll_style" >
+
+        <ImageView
+            android:id="@+id/frag_shopcar_iv"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/shopcar_bot_bar" />
+
+        <TextView
+            android:id="@+id/frag_shopcar"
+            style="@style/bottom_text_style"
+            android:text="@string/frag_shopcar" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/frag_mine_ll"
+        style="@style/bottom_ll_style" >
+
+        <ImageView
+            android:id="@+id/frag_mine_iv"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/mine_bot_bar" />
+
+        <TextView
+            android:id="@+id/frag_mine"
+            style="@style/bottom_text_style"
+            android:text="@string/frag_mine" />
+    </LinearLayout>
+
+</com.example.maxcion_home.jdmall.ui.BottomBar>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.maxcion_home.jdmall.ui.SubCategoryView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/subcategory"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none"
+    android:padding="8dp" >
+
+    <LinearLayout
+        android:id="@+id/child_container_ll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" />
+
+</com.example.maxcion_home.jdmall.ui.SubCategoryView>
+

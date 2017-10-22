@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="4dp"
+    android:layout_margin="4dp">
+
+    <RelativeLayout
+        android:id="@+id/has_receiver_rl"
+        android:layout_width="match_parent"
+        android:layout_height="60dp" >
+		
+        <ImageView 
+            android:id="@+id/isDeafult_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:visibility="gone"
+            android:src="@drawable/shopping_receiver_bg" />
+        
+        <TextView
+            android:id="@+id/name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/phone_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/name_tv"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@id/name_tv"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/address_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/name_tv"
+            android:layout_below="@id/name_tv"
+            android:layout_marginTop="5dp"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/delete_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="7dp"
+            android:layout_marginBottom="5dp"
+            android:text="删除"
+            android:padding="5dp"
+            android:textSize="16sp"
+            android:background="@drawable/search_et_shap" />
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

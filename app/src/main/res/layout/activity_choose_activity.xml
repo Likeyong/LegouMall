@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp" >
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="4dp"
+            android:onClick="goBack"
+            android:src="@drawable/back" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="请选择收货地址"
+            android:textColor="#BB1F35"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/lv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFF"
+        android:divider="#FAAA"
+        android:dividerHeight="1dp"
+        android:listSelector="@android:color/transparent"
+        android:scrollbars="none" />
+
+</LinearLayout>

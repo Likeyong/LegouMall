@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.maxcion_home.jdmall.activity.LoginActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="登 陆"
+            android:textSize="25sp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/tv_login"/>
+        <View
+            android:layout_width="120dp"
+            android:layout_height="5dp"
+            android:background="#C71622"
+            android:layout_below="@id/tv_login"
+            android:layout_centerInParent="true"/>
+    </RelativeLayout>
+    <ImageView
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/login_icon"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"/>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txip_username"
+        android:padding="10dp"
+        >
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_username"
+            android:hint="账号"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txip_passworld"
+        android:padding="10dp"
+        >
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tx_passworld"
+            android:hint="密码"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <Button
+        android:id="@+id/bt_login"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="#C71622"
+        android:text="登 陆"
+        android:textColor="#fff"
+        android:textSize="25sp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_registe_login"
+            android:text="新用户"
+            android:textSize="18sp"
+            android:paddingLeft="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_registe_refactor"
+            android:text="密码修改"
+            android:textSize="18sp"
+            android:layout_alignParentRight="true"
+            android:paddingRight="10dp"/>
+    </RelativeLayout>
+</LinearLayout>

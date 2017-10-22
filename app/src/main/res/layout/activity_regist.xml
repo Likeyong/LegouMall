@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+
+        <TextView
+            android:id="@+id/title_v"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="注册"
+            android:textSize="18sp" />
+
+        <View
+            android:layout_width="120dp"
+            android:layout_height="5dp"
+            android:layout_below="@id/title_v"
+            android:layout_centerHorizontal="true"
+            android:background="#C71523" />
+    </RelativeLayout>
+
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/til_username_register"
+        android:padding="10dp">
+
+        <EditText
+            android:id="@+id/username_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@android:color/transparent"
+            android:drawableLeft="@drawable/icon_user"
+            android:hint="请输入账号"
+            android:paddingLeft="5dp"
+            android:textSize="18sp" />
+    </android.support.design.widget.TextInputLayout>
+
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/til_pwd_register"
+        android:padding="10dp">
+
+        <EditText
+            android:id="@+id/pwd_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@android:color/transparent"
+            android:drawableLeft="@drawable/icon_p"
+            android:hint="请输入密码"
+            android:inputType="textPassword"
+            android:paddingLeft="5dp"
+            android:textSize="18sp" />
+    </android.support.design.widget.TextInputLayout>
+
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/til_repwd_register"
+        android:padding="10dp">
+
+        <EditText
+            android:id="@+id/surepwd_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@android:color/transparent"
+            android:drawableLeft="@drawable/icon_p"
+            android:hint="再次确认密码"
+            android:inputType="textPassword"
+            android:paddingLeft="5dp"
+            android:textSize="18sp" />
+    </android.support.design.widget.TextInputLayout>
+
+
+    <Button
+        android:id="@+id/bt_registClick"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="40dp"
+        android:background="#C71523"
+        android:padding="5dp"
+        android:text="下一步"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:button="@drawable/regist_cbx_bg"
+        android:text="同意京东用户注册协议"
+        android:textSize="14sp" />
+
+
+</LinearLayout>

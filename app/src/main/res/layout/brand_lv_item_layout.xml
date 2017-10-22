@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="2dp"
+    android:orientation="vertical" >
+	<!-- 子项布局里面如果有Button/CheckBox 都会抢占焦点 -->
+    <TextView
+        android:id="@+id/brand_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/pay_money_choose_bg"
+        android:ellipsize="end"
+        android:lines="1"
+        android:padding="5dp"  
+        android:gravity="center"
+        android:textColor="@drawable/choose_productlist_service_txtbg"
+        android:textSize="14sp" />
+
+</LinearLayout>

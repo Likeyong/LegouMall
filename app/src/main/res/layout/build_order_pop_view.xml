@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+
+
+        <TextView
+            android:id="@+id/title_tv"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:background="@color/bot_text_color_normal"
+            android:gravity="center_horizontal|center_vertical"
+            android:paddingLeft="8dp"
+            android:text="请确认支付信息"
+            android:textColor="@android:color/white" />
+
+        <LinearLayout
+            android:id="@+id/info_ll"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_below="@id/title_tv"
+            android:padding="20dp"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/order_no_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#F000"  />
+
+            <TextView
+                android:id="@+id/total_price_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#F000"
+                android:layout_marginTop="8dp"  />
+            <TextView
+                android:id="@+id/freight_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textColor="#F000"  />
+
+            <TextView
+                android:id="@+id/actual_price_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textColor="#F000" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/cancal_btn"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:background="@drawable/search_et_shap"
+                android:text="取 消 " />
+
+            <Button
+                android:id="@+id/sure_btn"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/search_et_shap"
+                android:text="确 认" />
+        </LinearLayout>
+
+
+</LinearLayout>
