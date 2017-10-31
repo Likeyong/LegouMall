@@ -3,20 +3,24 @@ package com.example.maxcion_home.jdmall.activity;
 import android.Manifest;
 import android.annotation.TargetApi;
 import android.app.AlertDialog;
+import android.content.ContentResolver;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.util.Log;
-import android.widget.EditText;
+import android.view.View;
 import android.widget.Toast;
-
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
@@ -49,7 +53,6 @@ public class HomeActivity extends FragmentActivity implements IBottomBarClickLis
     @BindView(R.id.reacher_head)
     public HeadView reacherHead;
     private FragmentManager man;
-    private EditText searchText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,13 +62,21 @@ public class HomeActivity extends FragmentActivity implements IBottomBarClickLis
         ZXingLibrary.initDisplayOpinion(this);
         SpeechUtility.createUtility(this, SpeechConstant.APPID + "=59eb68a8");
         int id = reacherHead.getContext().getResources().getIdentifier("android:id/search_src_text", null, null);
-        searchText = (EditText) reacherHead.findViewById(id);
-        reacherHead.performClick();
         reacherHead.setOnScanAndSpeakListener(this);
         man = getSupportFragmentManager();
         BottomBar bottomBar = (BottomBar) findViewById(R.id.bottom_bar);
         bottomBar.setIBottomBarClickListener(this);
         bottomBar.findViewById(R.id.frag_main_ll).performClick();
+        reacherHead.scanImg.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+                intent.addCategory(Intent.CATEGORY_OPENABLE);
+                intent.setType("image/*");
+                startActivityForResult(intent, 5);
+                return false;
+            }
+        });
     }
 
     @Override
@@ -103,6 +114,7 @@ public class HomeActivity extends FragmentActivity implements IBottomBarClickLis
             builder.setTitle("温馨提示")
                     .setMessage("为了您更好的使用扫描功能，请您赋予相机权限")
                     .setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                        @TargetApi(Build.VERSION_CODES.M)
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             requestPermissions(new String[]{Manifest.permission.CAMERA}, 1);
@@ -112,7 +124,6 @@ public class HomeActivity extends FragmentActivity implements IBottomBarClickLis
         } else {
             toScanner();
         }
-
 
 
     }
@@ -196,15 +207,52 @@ public class HomeActivity extends FragmentActivity implements IBottomBarClickLis
                     }
                     if (bundle.getInt(CodeUtils.RESULT_TYPE) == CodeUtils.RESULT_SUCCESS) {
                         String result = bundle.getString(CodeUtils.RESULT_STRING);
-                        Toast.makeText(this, "解析结果:" + result, Toast.LENGTH_LONG).show();
+                        toProductActivity(result);
                     } else if (bundle.getInt(CodeUtils.RESULT_TYPE) == CodeUtils.RESULT_FAILED) {
                         Toast.makeText(this, "解析二维码失败", Toast.LENGTH_LONG).show();
+                    }
+                }
+                break;
+            case 5:
+                if (data != null) {
+                    Uri uri = data.getData();
+                    ContentResolver cr = getContentResolver();
+                    try {
+                        Bitmap mBitmap = MediaStore.Images.Media.getBitmap(cr, uri);//显得到bitmap图片
+                        String[] proj={MediaStore.Images.Media.DATA};
+                        Cursor cursor=managedQuery(uri,proj,null,null,null);
+                        int column_index =cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
+                        cursor.moveToFirst();
+                        String path=cursor.getString(column_index);
+                        CodeUtils.analyzeBitmap(path, new CodeUtils.AnalyzeCallback() {
+                            @Override
+                            public void onAnalyzeSuccess(Bitmap mBitmap, String result) {
+                                toProductActivity(result);
+                            }
+
+                            @Override
+                            public void onAnalyzeFailed() {
+                                Toast.makeText(HomeActivity.this, "解析二维码失败", Toast.LENGTH_LONG).show();
+                            }
+                        });
+
+                        if (mBitmap != null) {
+                            mBitmap.recycle();
+                        }
+                    } catch (Exception e) {
+                        e.printStackTrace();
                     }
                 }
                 break;
         }
 
 
+    }
+
+    private void toProductActivity(String result) {
+        Intent toProductDetial = new Intent(HomeActivity.this,ProductDetialsActivity.class);
+        toProductDetial.putExtra("productId",Integer.valueOf(result));
+        startActivity(toProductDetial);
     }
 
     @Override
@@ -220,7 +268,7 @@ public class HomeActivity extends FragmentActivity implements IBottomBarClickLis
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     toScanner();
                 }
-               break;
+                break;
         }
     }
 }

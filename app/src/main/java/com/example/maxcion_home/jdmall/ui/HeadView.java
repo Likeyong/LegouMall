@@ -16,31 +16,32 @@ import com.example.maxcion_home.jdmall.interfaces.OnScanAndVoiceListener;
  * Created by maxcion_home on 2017/10/30.
  */
 
-public class HeadView extends LinearLayout implements View.OnClickListener{
+public class HeadView extends LinearLayout implements View.OnClickListener {
 
     public SearchView searchView;
 
-    private OnScanAndVoiceListener listener ;
+    private OnScanAndVoiceListener listener;
+    public ImageView scanImg;
 
     public HeadView(Context context) {
-        this(context,null);
+        this(context, null);
     }
 
     public HeadView(Context context, @Nullable AttributeSet attrs) {
-        this(context, attrs,0);
+        this(context, attrs, 0);
     }
 
     public HeadView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        LayoutInflater.from(context).inflate(R.layout.head_layout,this);
+        LayoutInflater.from(context).inflate(R.layout.head_layout, this);
         searchView = (SearchView) findViewById(R.id.search);
-        ImageView scanImg = (ImageView) findViewById(R.id.scan_iv);
+        scanImg = (ImageView) findViewById(R.id.scan_iv);
         ImageView message = (ImageView) findViewById(R.id.message_iv);
         scanImg.setOnClickListener(this);
         message.setOnClickListener(this);
     }
 
-    public void setOnQueryTextListener(SearchView.OnQueryTextListener listener){
+    public void setOnQueryTextListener(SearchView.OnQueryTextListener listener) {
         searchView.setOnQueryTextListener(listener);
     }
 
@@ -50,7 +51,7 @@ public class HeadView extends LinearLayout implements View.OnClickListener{
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.scan_iv:
                 listener.startScanner();
                 break;

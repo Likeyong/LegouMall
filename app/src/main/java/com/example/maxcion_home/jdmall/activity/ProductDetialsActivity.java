@@ -1,16 +1,29 @@
 package com.example.maxcion_home.jdmall.activity;
 
+import android.Manifest;
+import android.annotation.TargetApi;
+import android.app.AlertDialog;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.Message;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.maxcion_home.jdmall.JDApplication;
 import com.example.maxcion_home.jdmall.R;
@@ -20,7 +33,11 @@ import com.example.maxcion_home.jdmall.fragment.ProductCommentFragment;
 import com.example.maxcion_home.jdmall.fragment.ProductDetailsFragment;
 import com.example.maxcion_home.jdmall.fragment.ProductIntroduceFragment;
 import com.example.maxcion_home.jdmall.interfaces.IOnProductVersionSelected;
+import com.uuzuche.lib_zxing.activity.CodeUtils;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 
 import butterknife.BindView;
@@ -49,9 +66,13 @@ public class ProductDetialsActivity extends BaseActivity implements IOnProductVe
     TextView add2shopcar;
     public int mProductId;
     private static ProductIntroduceFragment mIntroduceFragment;
+    @BindView(R.id.sha)
+    ImageView sha;
+    ImageView shareImageview;
 
     private int mProductCount;
     private String productVersion;
+    private Bitmap bitmap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,6 +104,7 @@ public class ProductDetialsActivity extends BaseActivity implements IOnProductVe
 
 
     private void initView() {
+        shareImageview = new ImageView(this);
         ContainAdapter containAdapter = new ContainAdapter(getSupportFragmentManager());
         mIntroduceFragment.setOnProVersionSelectedListener(ProductDetialsActivity.this);
         vp.setAdapter(containAdapter);
@@ -113,7 +135,43 @@ public class ProductDetialsActivity extends BaseActivity implements IOnProductVe
 
             }
         });
+        shareImageview.setOnLongClickListener(new View.OnLongClickListener() {
+            @TargetApi(Build.VERSION_CODES.M)
+            @Override
+            public boolean onLongClick(View v) {
 
+                if (ContextCompat.checkSelfPermission(ProductDetialsActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                        != PackageManager.PERMISSION_GRANTED){
+                    requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},0);
+                }else {
+                    saveScanPic();
+                }
+
+
+                Toast.makeText(ProductDetialsActivity.this, "保存成功", Toast.LENGTH_SHORT).show();
+                return false;
+            }
+        });
+
+    }
+
+    private void saveScanPic() {
+        try {
+            String path = Environment.getExternalStoragePublicDirectory(
+                    Environment.DIRECTORY_DOWNLOADS).getPath();
+            Log.d("TAG",Environment.getExternalStorageDirectory().getPath());
+            File scannerPic = new File(Environment.getExternalStorageDirectory(),
+                    "乐购" + Math.random() * 10000+".png");
+            if (scannerPic.exists()) {
+                scannerPic.delete();
+            }
+            FileOutputStream out = new FileOutputStream(scannerPic);
+            bitmap.compress(Bitmap.CompressFormat.PNG, 90, out);
+            out.flush();
+            out.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     private void initData() {
@@ -121,7 +179,7 @@ public class ProductDetialsActivity extends BaseActivity implements IOnProductVe
         mProductId = inten.getIntExtra("productId", 0);
     }
 
-    @OnClick({R.id.details_ll, R.id.introduce_ll, R.id.comment_ll})
+    @OnClick({R.id.details_ll, R.id.introduce_ll, R.id.comment_ll, R.id.sha})
     public void onViewClicked(View view) {
         initVPIndicator();
         switch (view.getId()) {
@@ -136,6 +194,18 @@ public class ProductDetialsActivity extends BaseActivity implements IOnProductVe
             case R.id.comment_ll:
                 vp.setCurrentItem(2);
                 commentTv.setVisibility(View.VISIBLE);
+                break;
+            case R.id.sha:
+
+                shareImageview.setVisibility(View.VISIBLE);
+                bitmap = CodeUtils.createImage(mProductId + "", 400, 400,
+                        BitmapFactory.decodeResource(getResources(), R.mipmap.icon));
+                shareImageview.setImageBitmap(bitmap);
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder.setView(shareImageview)
+                        .setTitle("长按二维码进行保存分享")
+                        .setNegativeButton("取消", null)
+                        .show();
                 break;
         }
     }
@@ -166,6 +236,17 @@ public class ProductDetialsActivity extends BaseActivity implements IOnProductVe
     @Override
     public void onProductVersionSelected(String version) {
         productVersion = version;
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        switch (requestCode){
+            case 0:
+                if (grantResults.length>0&&grantResults[0]==PackageManager.PERMISSION_GRANTED){
+                    saveScanPic();
+                }
+        }
     }
 
     public static class ContainAdapter extends FragmentPagerAdapter {

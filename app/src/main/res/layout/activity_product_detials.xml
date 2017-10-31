@@ -4,7 +4,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <!-- 头部 -->
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -102,6 +101,7 @@
             android:layout_alignParentRight="true"
             android:layout_marginRight="10dp" />
         <ImageView
+            android:id="@+id/sha"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/share_icon"
@@ -115,11 +115,26 @@
         android:layout_height="1dp"
         android:background="#E8E8E8" />
 
-    <android.support.v4.view.ViewPager
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:id="@+id/vp" />
+        android:layout_weight="1">
+
+        <android.support.v4.view.ViewPager
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/vp" />
+
+       <!-- <ImageView
+            android:id="@+id/share_imageview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone"/>-->
+
+    </RelativeLayout>
+
+
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
