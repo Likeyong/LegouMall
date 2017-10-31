@@ -12,5 +12,5 @@ public class ProductSendArg {
     public int minPrice;//最低价格
     public int maxPrice;//最高价格
     public int brandId;//最高价格
-//    public String keyword;
+    public String keyword;
 }

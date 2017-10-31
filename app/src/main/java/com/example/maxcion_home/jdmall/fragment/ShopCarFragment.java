@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.os.Message;
 import android.os.Parcelable;
 import android.support.annotation.Nullable;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -16,6 +17,7 @@ import android.widget.Toast;
 
 import com.example.maxcion_home.jdmall.JDApplication;
 import com.example.maxcion_home.jdmall.R;
+import com.example.maxcion_home.jdmall.activity.HomeActivity;
 import com.example.maxcion_home.jdmall.activity.SettleActivity;
 import com.example.maxcion_home.jdmall.adapter.CategoryTopAdapter;
 import com.example.maxcion_home.jdmall.adapter.ShopcarAdapter;
@@ -112,7 +114,8 @@ public class ShopCarFragment extends BaseFragment implements CategoryTopAdapter.
 
     @Override
     protected void initView() {
-
+        HomeActivity activity = (HomeActivity) getActivity();
+        activity.hideTitle(View.GONE);
     }
 
     @Override

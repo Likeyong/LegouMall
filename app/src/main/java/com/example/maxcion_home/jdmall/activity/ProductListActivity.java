@@ -8,7 +8,6 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -158,6 +157,8 @@ public class ProductListActivity extends BaseActivity implements CategoryTopAdap
         productId = getIntent().getIntExtra("productId", 0);
         topCategoryId = getIntent().getIntExtra("topcategoryid", 0);
         sendArg.categoryId = productId;
+        sendArg.keyword =getIntent().getStringExtra("keyword") ;
+//        Toast.makeText(this,getIntent().getStringExtra("keyword"),0).show();
         if (productId == 0) {
             finish();
             Toast.makeText(this, "数据异常", Toast.LENGTH_SHORT).show();

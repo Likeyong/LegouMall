@@ -4,31 +4,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <!-- 头部 -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:background="#FAFAFA"
-        android:orientation="horizontal" >
-        
-        <EditText
-			android:id="@+id/search_et"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:layout_margin="5dp"
-            android:paddingLeft="5dp"
-
-            android:drawableLeft="@drawable/icon_search"
-            android:background="@drawable/search_et_shap"  />
-        
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="5dp"
-            android:layout_marginTop="7dp"
-            android:src="@drawable/scan" />
-    </LinearLayout>
 
 
 

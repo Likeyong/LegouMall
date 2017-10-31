@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Message;
 import android.support.annotation.Nullable;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.GridLayoutManager;
@@ -15,11 +16,13 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.maxcion_home.jdmall.R;
+import com.example.maxcion_home.jdmall.activity.HomeActivity;
 import com.example.maxcion_home.jdmall.activity.ProductDetialsActivity;
 import com.example.maxcion_home.jdmall.adapter.CategoryTopAdapter;
 import com.example.maxcion_home.jdmall.adapter.GetYouLikeKillAdapter;
@@ -30,6 +33,7 @@ import com.example.maxcion_home.jdmall.bean.RsecKillRow;
 import com.example.maxcion_home.jdmall.cons.IdiyMessage;
 import com.example.maxcion_home.jdmall.cons.NetWorkCons;
 import com.example.maxcion_home.jdmall.controls.HomeController;
+import com.example.maxcion_home.jdmall.interfaces.OnSearchSubmit;
 import com.example.maxcion_home.jdmall.ui.FlexiScrollView;
 
 import java.util.ArrayList;
@@ -44,14 +48,9 @@ import butterknife.Unbinder;
  * Created by maxcion_home on 2017/9/8.
  */
 
-public class HomeFragment extends BaseFragment implements ViewPager.OnPageChangeListener, CategoryTopAdapter.OnItemClickListener {
+public class HomeFragment extends BaseFragment implements ViewPager.OnPageChangeListener,
+        CategoryTopAdapter.OnItemClickListener {
 
-    @BindView(R.id.scan_iv)
-    ImageView scanIv;
-    @BindView(R.id.search_et)
-    EditText searchEt;
-    @BindView(R.id.message_iv)
-    ImageView messageIv;
     @BindView(R.id.ad_vp)
     ViewPager adVp;
     @BindView(R.id.clock)
@@ -222,6 +221,9 @@ public class HomeFragment extends BaseFragment implements ViewPager.OnPageChange
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         initControl();
+        HomeActivity activity = (HomeActivity) getActivity();
+        activity.hideTitle(View.VISIBLE);
+        activity.reacherHead.setOnQueryTextListener(new OnSearchSubmit(getActivity()));
         mControl.sendAsyncMessage(IdiyMessage.GET_BANNER_ACTION, 1);
         mControl.sendAsyncMessage(IdiyMessage.SECOND_KILL_ACTION, 0);
         mControl.sendAsyncMessage(IdiyMessage.RECOMMEND_PRODUCT_ACTION, 0);
@@ -245,6 +247,7 @@ public class HomeFragment extends BaseFragment implements ViewPager.OnPageChange
         intent.putExtra("productId",item.productId);
         startActivity(intent);
     }
+
 
     class ADAdapter extends PagerAdapter {
 

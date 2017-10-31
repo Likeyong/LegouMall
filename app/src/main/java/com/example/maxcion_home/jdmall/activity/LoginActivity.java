@@ -11,7 +11,6 @@ import android.widget.TextView;
 import com.alibaba.fastjson.JSON;
 import com.example.maxcion_home.jdmall.JDApplication;
 import com.example.maxcion_home.jdmall.R;
-import com.example.maxcion_home.jdmall.R2;
 import com.example.maxcion_home.jdmall.bean.RLoginResult;
 import com.example.maxcion_home.jdmall.bean.RResult;
 import com.example.maxcion_home.jdmall.cons.IdiyMessage;
@@ -29,10 +28,10 @@ public class LoginActivity extends BaseActivity {
     TextInputLayout mPassWorld;
     UserController mUserControl;
 
-    @BindView(R2.id.bt_login)
+    @BindView(R.id.bt_login)
     Button loginBton;
 
-    @BindView(R2.id.tv_registe_login)
+    @BindView(R.id.tv_registe_login)
     TextView tvRegiste;
 
 
@@ -105,7 +104,7 @@ public class LoginActivity extends BaseActivity {
 
     }
 
-    @OnClick(R2.id.tv_registe_login)
+    @OnClick(R.id.tv_registe_login)
     void regist() {
         start2Activity(this, RegistActivity.class, false);
     }

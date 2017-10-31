@@ -5,6 +5,11 @@
     android:orientation="vertical"
     android:background="@android:color/white"  >
 
+    <com.example.maxcion_home.jdmall.ui.HeadView
+        android:id="@+id/reacher_head"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
     <FrameLayout
         android:id="@+id/top_bar"
         android:layout_width="match_parent"

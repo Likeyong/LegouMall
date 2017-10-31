@@ -6,7 +6,7 @@ import android.support.design.widget.TextInputLayout;
 import android.text.TextUtils;
 
 import com.example.maxcion_home.jdmall.R;
-import com.example.maxcion_home.jdmall.R2;
+import com.example.maxcion_home.jdmall.R;
 import com.example.maxcion_home.jdmall.bean.RResult;
 import com.example.maxcion_home.jdmall.cons.IdiyMessage;
 import com.example.maxcion_home.jdmall.controls.UserController;
@@ -17,14 +17,14 @@ import butterknife.OnClick;
 
 public class RegistActivity extends BaseActivity {
 
-    @BindView(R2.id.til_username_register)
+    @BindView(R.id.til_username_register)
     TextInputLayout mUserName ;
-    @BindView(R2.id.til_pwd_register)
+    @BindView(R.id.til_pwd_register)
     TextInputLayout mPwd ;
-    @BindView(R2.id.til_repwd_register)
+    @BindView(R.id.til_repwd_register)
     TextInputLayout mRepwd ;
 
-    @OnClick(R2.id.bt_registClick) void registClick(){
+    @OnClick(R.id.bt_registClick) void registClick(){
         String userName = mUserName.getEditText().getText().toString();
         String pwd = mPwd.getEditText().getText().toString();
         String rePwd = mRepwd.getEditText().getText().toString();

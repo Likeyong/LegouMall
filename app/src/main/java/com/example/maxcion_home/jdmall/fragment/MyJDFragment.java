@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 import com.example.maxcion_home.jdmall.JDApplication;
 import com.example.maxcion_home.jdmall.R;
-import com.example.maxcion_home.jdmall.R2;
+import com.example.maxcion_home.jdmall.activity.HomeActivity;
 import com.example.maxcion_home.jdmall.activity.LoginActivity;
 import com.example.maxcion_home.jdmall.activity.OrderListActivity;
 import com.example.maxcion_home.jdmall.bean.RLoginResult;
@@ -66,7 +66,9 @@ public class MyJDFragment extends BaseFragment implements View.OnClickListener {
 
     @Override
     protected void initView() {
-        getActivity().findViewById(R.id.logout_btn).setOnClickListener(this);
+        HomeActivity homeActivity = (HomeActivity) getActivity();
+        homeActivity.hideTitle(View.GONE);
+        homeActivity.findViewById(R.id.logout_btn).setOnClickListener(this);
         JDApplication jdApplication = (JDApplication) getActivity().getApplication();
         mRLoginResult = jdApplication.mRLoginResult;
         userNameTv.setText(mRLoginResult.userName);

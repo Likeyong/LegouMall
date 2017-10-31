@@ -6,40 +6,7 @@
 
     <!-- 头部 -->
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:background="#FAFAFA"
-        android:focusable="true"
-        android:gravity="center_vertical"
-        android:orientation="horizontal">
 
-        <ImageView
-            android:id="@+id/scan_iv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
-            android:src="@drawable/scan" />
-
-        <EditText
-            android:id="@+id/search_et"
-            android:layout_width="0dp"
-            android:layout_height="28dp"
-            android:layout_marginRight="5dp"
-            android:layout_weight="1"
-            android:background="@drawable/search_et_shap"
-            android:drawableLeft="@drawable/icon_search"
-            android:editable="false"
-            android:paddingLeft="5dp" />
-
-        <ImageView
-            android:id="@+id/message_iv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="5dp"
-            android:src="@drawable/message" />
-    </LinearLayout>
 
     <!--<include layout="@layout/discover_divider_layout" />-->
 

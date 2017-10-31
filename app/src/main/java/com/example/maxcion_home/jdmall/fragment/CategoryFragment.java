@@ -31,8 +31,6 @@ public class CategoryFragment extends BaseFragment implements CategoryTopAdapter
 
 
     Unbinder unbinder;
-    @BindView(R.id.search_et)
-    EditText searchEt;
     @BindView(R.id.top_lv)
     RecyclerView topLv;
     @BindView(R.id.subcategory)

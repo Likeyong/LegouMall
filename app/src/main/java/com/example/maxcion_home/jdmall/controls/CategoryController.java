@@ -1,6 +1,7 @@
 package com.example.maxcion_home.jdmall.controls;
 
 import android.content.Context;
+import android.util.Log;
 
 import com.alibaba.fastjson.JSON;
 import com.example.maxcion_home.jdmall.bean.ProductSendArg;
@@ -71,7 +72,6 @@ public class CategoryController extends BaseController {
 
     private HashMap<String, String> initProductSendArg(ProductSendArg arg) {
         HashMap<String, String> map = new HashMap<>();
-//        map.put("keyword", arg.keyword);
         map.put("categoryId", arg.categoryId + "");
         map.put("filterType", arg.filterType + "");
         if (arg.sortType != 0) {
@@ -84,8 +84,9 @@ public class CategoryController extends BaseController {
         }
         if (arg.brandId != 0) {
             map.put("brandId", arg.brandId + "");
-        }
 
+        }
+        map.put("keyword", arg.keyword);
         return map;
     }
 
