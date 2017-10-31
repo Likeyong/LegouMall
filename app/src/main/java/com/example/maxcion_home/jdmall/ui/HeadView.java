@@ -18,7 +18,7 @@ import com.example.maxcion_home.jdmall.interfaces.OnScanAndVoiceListener;
 
 public class HeadView extends LinearLayout implements View.OnClickListener{
 
-    private SearchView searchView;
+    public SearchView searchView;
 
     private OnScanAndVoiceListener listener ;
 

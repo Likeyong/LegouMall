@@ -20,7 +20,7 @@
         android:layout_width="0dp"
         android:layout_weight="1"
         android:layout_height="wrap_content"
-        android:background="@drawable/search_et_shap"
+
         />
     <!--<EditText
         android:id="@+id/search_et"

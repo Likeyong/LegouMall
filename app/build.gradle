@@ -52,4 +52,5 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.1.1'
     compile 'com.android.support:design:26.0.0-alpha1'
     compile 'cn.yipianfengye.android:zxing-library:2.2'
+    implementation files('libs/Msc.jar')
 }

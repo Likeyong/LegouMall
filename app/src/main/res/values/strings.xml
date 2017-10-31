@@ -1,6 +1,5 @@
 <resources>
-    <string name="app_name">JDMall</string>
-    <!--<string name="app_name">我的京东</string>-->
+    <string name="app_name">乐购商城</string>
 
     <string name="frag_main">首页</string>
 

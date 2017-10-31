@@ -3,6 +3,7 @@ package com.example.maxcion_home.jdmall;
 import android.app.Application;
 
 import com.example.maxcion_home.jdmall.bean.RLoginResult;
+import com.uuzuche.lib_zxing.activity.ZXingLibrary;
 
 /**
  * Created by maxcion_home on 2017/9/9.
@@ -11,7 +12,10 @@ import com.example.maxcion_home.jdmall.bean.RLoginResult;
 public class JDApplication extends Application {
     public RLoginResult mRLoginResult ;
 
-//    public void saveRLoginResult(RLoginResult rLoginResult){
-//        mRLoginResult= rLoginResult ;
-//    }
+    @Override
+    public void onCreate() {
+        super.onCreate();
+
+        ZXingLibrary.initDisplayOpinion(this);
+    }
 }

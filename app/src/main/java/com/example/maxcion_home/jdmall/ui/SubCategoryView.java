@@ -199,6 +199,7 @@ public class SubCategoryView extends FlexiScrollView implements IViewContainer, 
         Intent intent = new Intent(getContext(), ProductListActivity.class);
         intent.putExtra("productId",rCategoryItem.id);
         intent.putExtra("topcategoryid",mRcategoryItem.id);
+        intent.putExtra("keyword","");
         getContext().startActivity(intent);
 
     }
